@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nouveau producteur</title>
+
+<LINK rel="stylesheet" type="text/css" href="static/form.css">
+
+</head>
+<body onload="startReForm()">
+<form action="post" id="thisForm">
+<fieldset>
+<legend>Nouveau producteur</legend>
+<div class="myform" id="myform">
+<div class="myfield" for="nom"><label>Nom</label><input type="text" name="nom"></div>
+<div class="myfield" for="adresse"><label>Adresse</label><textarea name="adresse" rows="4" cols="30"></textarea></div>
+<div class="myfield" for="tel"><label>Tél</label><input type="tel" name="tel"></div>
+<div class="myfield" for="email"><label>e-mail</label><input type="email" name="email"></div>
+<div class="myfield" for="remarques"><label>Remarques</label><input type="text" name="remarques"></div>
+</div>
+<button type="submit">Ok</button>
+</fieldset>
+</form> 
+
+{{user_name}}<br>
+<a href="{{url}}"> {{url_linktext}}</a>
+</body>
+
+</html>

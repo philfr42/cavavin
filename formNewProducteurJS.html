@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nouveau producteur</title>
+
+<LINK rel="stylesheet" type="text/css" href="static/base.css">
+<LINK rel="stylesheet" type="text/css" href="static/formReForm.css">
+
+<script src="static/formReForm.min.js"></script>
+<script>
+	function doReform() {
+		startReForm();
+	}
+
+	var formReForm;
+	function startReForm() {
+		// create the ReForm interface
+		var reformOptions = {
+			formContainerId : 'myform',
+			autoLoadCss : false,
+			autoReform : true
+		}
+		formReForm = new FormReForm(reformOptions);
+
+		/* alternatively remove autoLoadCss and autoReform options */
+		//formReForm.doReForm();
+		//formReForm.loadformReFormCss();
+	}
+</script>
+</head>
+
+<body onload="startReForm()">
+
+
+	<form action="post" id="thisForm">
+		<fieldset>
+			<legend>Nouveau producteur</legend>
+		<div class="form" id="myform">
+			<!-- These are typical 4 column text boxes -->
+				<label for="nom">Nom</label> <input type="text" name="nom" id="nom" />
+				<label for="adresse">Adresse</label><textarea name="adresse" id="adresse" rows="4" cols="30"></textarea>
+				<label for="tel">Tél</label> <input type="tel" name="tel" id="tel" />
+				<label for="email">e-mail</label><input type="email" name="email"
+					id="email" /> <label for="remarques">Remarques</label><input
+					type="text" name="remarques" id="remarques" />
+		</div>
+			<button type="submit">Ok</button>
+		</fieldset>
+	</form>
+
+	<a href="{{url}}">{{url_linktext}}</a>
+
+</body>
+
+</html>

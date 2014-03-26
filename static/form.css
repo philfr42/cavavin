@@ -1,0 +1,44 @@
+body {
+font: 62.5% sans-serif;
+}
+.myfield {
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+form, fieldset, legend {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+legend {
+	font-size: 2em;
+	line-height: 1.8;
+	padding-bottom: .5em;
+}
+form .myfield {
+ 	margin: 0 0 .75em;
+	clear: both;
+	padding: 0;
+}
+label {
+ 	display: block;
+	float: left;
+	line-height: 1.6;
+	margin-right: 10px;
+	text-align: right;
+	width: 120px;
+}
+label:AFTER {
+	content: ':';
+}
+input, textarea {
+	background: #ddd;
+	width: 250px;
+}
+input:FOCUS, textarea:FOCUS {
+	background: #fff;
+}
+button {
+	margin-left: 130px;
+	cursor: pointer;
+}
