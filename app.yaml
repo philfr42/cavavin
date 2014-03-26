@@ -13,8 +13,12 @@ libraries:
   
   
 handlers:
+- url: /favicon.ico
+  static_files: static/img/favicon.ico
+  upload: static/img/favicon.ico
+
 - url: /static
   static_dir: static
   
 - url: /.*
-  script: helloworld.py
+  script: cavavin.py

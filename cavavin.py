@@ -5,6 +5,7 @@ from google.appengine.ext import ndb
 import jinja2
 import os
 import webapp2
+import cgi
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -33,7 +34,26 @@ class MainPage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('formNewProducteur.html')
         self.response.write(template.render(template_values))
 
-application = webapp2.WSGIApplication([('/', MainPage)], debug=True)
+class NewProd(webapp2.RequestHandler):
+    def post(self):
+        template = JINJA_ENVIRONMENT.get_template('prod.html')
+        template_values = {
+            'nom': cgi.escape(self.request.get('nom')),
+            'adresse': cgi.escape(self.request.get('adresse')),
+            'tel': cgi.escape(self.request.get('tel')),
+            'email': cgi.escape(self.request.get('email')),
+            'remarques': cgi.escape(self.request.get('remarques')),
+        }
+        self.response.write(template.render(template_values))
+#        self.response.write('<!doctype html><html><body>You wrote:<pre>')
+#        self.response.write(cgi.escape(self.request.get('content')))
+#        self.response.write('</pre></body></html>')
+
+
+application = webapp2.WSGIApplication([
+        ('/', MainPage),
+        ('/newprod', NewProd)
+        ], debug=True)
 
 
 def main():
