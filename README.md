@@ -35,7 +35,7 @@ The freezing point of water is $\pu{273.15 K}$.
 $$\ce{Ca^2+(aq) + 2 OH-(aq) <=> Ca(OH)2(s)}$$
 
 
-$$\int_{V_{i}}^{V_{f}}p \, \mathrm{d}V$$
+$$\int_{V_{i}}^{V_{f}}p\mathrm{d}V$$
 
 $$\sum_{i=1}^{\infty}\frac{1}{a^{i}}$$
 
